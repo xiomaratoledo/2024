@@ -1,0 +1,13 @@
+Yes, that's correct! Let's clarify the roles of `System.exit(0)` and `break`:
+
+1. **`System.exit(0)`:** This statement is used to terminate the entire Java Virtual Machine (JVM). It takes an exit status code (in this case, 0) as an argument. When `System.exit(0)` is executed, it forcefully ends the program, and control is returned to the operating system. The value 0 typically indicates a successful execution, while non-zero values may indicate an error or abnormal termination.
+
+2. **`break`:** In the context of a `switch` statement or a loop, the `break` statement is used to exit the immediate enclosing block. In a `switch` statement, it is used to exit the `switch` block. In a loop, it is used to exit the loop. Without a `break` statement, control would "fall through" to the next case or iteration.
+
+In the specific case of your menu-driven program:
+
+- When the user selects option 4, `System.exit(0)` is called, and the entire program is terminated. At this point, control does not return to the `switch` statement or any other part of the program.
+
+- If you were using `break` after `System.exit(0)`, it would technically end the `switch` block, but since the program is exiting immediately, the `break` statement wouldn't have any practical impact.
+
+So, in summary, `System.exit(0)` terminates the entire program, and `break` is used to exit the immediate control structure (such as a `switch` block or a loop).
