@@ -1,0 +1,7 @@
+Exactly! The `nextInt()` method in `Scanner` reads only the integer value and leaves the newline character (Enter key) in the input buffer. On the other hand, `next()` and `nextLine()` methods read the entire line, including any remaining newline characters, and return the obtained string.
+
+When you use `nextInt()`, if you immediately follow it with `nextLine()`, the `nextLine()` will capture the leftover newline character from the previous input, treating it as if the user entered an empty line.
+
+By including an additional `nextLine()` after reading other types of inputs, you consume the leftover newline character, ensuring that subsequent calls to `nextLine()` read the actual input provided by the user and not any residual characters from the previous input.
+
+This is a common pattern to handle potential issues when mixing different types of `next` methods in the `Scanner` class.
