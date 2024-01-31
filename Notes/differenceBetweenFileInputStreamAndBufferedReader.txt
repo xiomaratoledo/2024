@@ -1,0 +1,80 @@
+`FileInputStream` and `BufferedReader` serve different purposes when it comes to file I/O in Java.
+
+### FileInputStream:
+
+1. **Purpose:**
+   - `FileInputStream` is primarily used for reading raw binary data from a file, such as images, audio files, or any other non-text data.
+
+2. **Byte Reading:**
+   - It reads data in the form of bytes. The `read()` method of `FileInputStream` returns the next byte of data from the file.
+
+3. **No Buffering:**
+   - `FileInputStream` does not provide buffering by default. It reads one byte at a time, which can be less efficient for reading large amounts of data.
+
+### BufferedReader:
+
+1. **Purpose:**
+   - `BufferedReader` is specifically designed for reading character-based data from a file. It's more suitable for reading text files.
+
+2. **Character Reading:**
+   - It reads data in the form of characters. The `readLine()` method reads a line of text, and `read(char[] cbuf, int off, int len)` can be used for reading characters into a buffer.
+
+3. **Buffering:**
+   - `BufferedReader` provides buffering, which means it reads data in larger chunks, improving the efficiency of I/O operations. This is particularly useful when dealing with large text files.
+
+### Choosing Between Them:
+
+- **Binary Data:**
+  - Use `FileInputStream` when dealing with raw binary data, where you need to read bytes directly.
+
+- **Text Data:**
+  - Use `BufferedReader` when working with text files or when you need to process text line by line. It provides convenient methods for reading text and buffering for improved performance.
+
+### Example Comparison:
+
+**FileInputStream:**
+
+```java
+import java.io.FileInputStream;
+import java.io.IOException;
+
+public class FileInputStreamExample {
+    public static void main(String[] args) {
+        String fileName = "example.txt";
+
+        try (FileInputStream fis = new FileInputStream(fileName)) {
+            int data;
+            while ((data = fis.read()) != -1) {
+                System.out.print((char) data);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+**BufferedReader:**
+
+```java
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class BufferedReaderExample {
+    public static void main(String[] args) {
+        String fileName = "example.txt";
+
+        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                System.out.println(line);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+In summary, use `FileInputStream` for raw binary data, and use `BufferedReader` for efficient reading of character-based data, especially when dealing with text files.
