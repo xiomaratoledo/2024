@@ -1,0 +1,20 @@
+// the example is ReadCharArrayExample.java
+
+ah now I get it. because in each loop it has a capacity to read 1024 character. but in the example it reads less because the file has less than 1024. 
+So in this example it runs once. But when it encounter other situation in which the file is so huge it has the capacity to handle it well. so this is the reason why the 
+program is design this way. so that it can be used in different situation. Am I correct?
+
+Yes, you've grasped the concept well! The use of a buffer (like the `char[] buffer = new char[1024]` in the example) allows the program to efficiently read and process data from a file in chunks. The buffer acts as a temporary storage space where data is read into and then processed.
+
+Here are the key points:
+
+1. **Efficiency:** Reading and processing data in chunks (buffered reading) is more efficient than reading one character at a time. It reduces the number of I/O operations, making the program faster, especially when dealing with large files.
+
+2. **Versatility:** The buffer size can be adjusted based on the characteristics of the data and the specific use case. A larger buffer size might be more efficient for reading from large files, while a smaller buffer size might be more memory-efficient.
+
+3. **Handling Variable File Sizes:** The program can handle files of different sizes. If a file is smaller than the buffer size, the program will read and process the entire content in one go. If the file is larger, it will read and process chunks of data until the end of the file is reached.
+
+This design allows the program to strike a balance between performance and memory usage, making it versatile and suitable for various scenarios. It's a common practice in file I/O to use buffered reading when dealing with input streams.
+
+If you have any more questions or if there's anything else you'd like to explore, feel free to ask!
+
