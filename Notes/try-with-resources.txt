@@ -1,0 +1,22 @@
+In the `ReadCharArrayExample`, the `try` block is using a feature called "try-with-resources" introduced in Java 7. This feature is designed to ensure that resources like file streams are closed properly after they are no longer needed, even if an exception occurs while processing them.
+
+Here's how the `try-with-resources` block works:
+
+```java
+try (BufferedReader br = new BufferedReader(new FileReader("example.txt"))) {
+    // Code to read and process the file
+} catch (IOException e) {
+    e.printStackTrace();
+}
+```
+
+1. **Opening Resources:** The resources that need to be closed are opened within the parentheses after the `try` keyword. In this case, it's the `BufferedReader` created using `new FileReader("example.txt")`.
+
+2. **Automatic Closing:** After the execution of the `try` block (whether normally or due to an exception), the resources opened in the parentheses are automatically closed by Java. This ensures that resources are properly released, even if an exception occurs.
+
+3. **Exception Handling:** If an exception occurs during the execution of the `try` block, it is caught by the `catch` block, where you can handle it appropriately. In this example, any `IOException` that occurs during file reading is caught and printed to the standard error stream.
+
+By using `try-with-resources`, you ensure that resources are closed in a timely and reliable manner, and you don't need to explicitly write cleanup code (e.g., `finally` block) to close the resources. It improves code readability and reduces the likelihood of resource leaks.
+
+
+
