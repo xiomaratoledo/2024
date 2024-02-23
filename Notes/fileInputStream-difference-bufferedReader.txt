@@ -1,0 +1,27 @@
+To familiarize yourself with the differences between `FileInputStream` and `BufferedReader`, it's important to understand their primary purposes, typical use cases, and how they handle input differently. Here's what you should remember:
+
+1. **Purpose**:
+   - `FileInputStream`: Used for reading raw bytes from a file.
+   - `BufferedReader`: Used for reading text from a character-input stream, typically used for reading lines of text efficiently.
+
+2. **Level of Abstraction**:
+   - `FileInputStream` operates at a lower level, dealing with raw bytes.
+   - `BufferedReader` operates at a higher level, providing methods for reading text lines and handling character encoding.
+
+3. **Efficiency**:
+   - `FileInputStream` is more efficient for reading large amounts of raw binary data, such as images or serialized objects.
+   - `BufferedReader` is more efficient for reading text files line by line, especially when dealing with large text files, as it buffers the input for better performance.
+
+4. **Usage**:
+   - Use `FileInputStream` when you need to read raw binary data or when you want more control over reading individual bytes from a file.
+   - Use `BufferedReader` when you're reading text files and want to read lines of text efficiently, handling character encoding and buffering automatically.
+
+5. **Handling Text**:
+   - When using `FileInputStream`, you need to handle text encoding yourself if you're dealing with text files.
+   - `BufferedReader` handles text encoding automatically based on the platform's default charset or a specified charset, making it easier to work with text files.
+
+6. **Convenience**:
+   - `BufferedReader` provides convenient methods like `readLine()` for reading lines of text, which is often what you want when dealing with text files.
+   - `FileInputStream` provides lower-level methods for reading bytes, which gives you more flexibility but requires more effort to handle text parsing.
+
+By understanding these points and practicing with both classes, you'll become familiar with their differences and know when to use each one effectively in your Java programs.
