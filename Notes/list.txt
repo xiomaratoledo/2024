@@ -1,0 +1,19 @@
+Learning about `List<>` would indeed be beneficial before diving into Java streams. `List<>` is one of the most commonly used data structures in Java, and understanding its fundamentals will provide a solid foundation for working with streams.
+
+Here are some key concepts related to `List<>` that you should understand:
+
+1. **Definition**: A `List<>` in Java is an ordered collection of elements. Each element in the list has an index, starting from 0 for the first element.
+
+2. **Interface**: `List<>` is an interface in Java, which means it defines a contract for implementing classes to follow. Common implementations of the `List<>` interface include `ArrayList<>` and `LinkedList<>`.
+
+3. **Operations**: `List<>` provides various operations for adding, removing, accessing, and manipulating elements. Some common methods include `add()`, `remove()`, `get()`, `size()`, `contains()`, `indexOf()`, `addAll()`, `removeAll()`, etc.
+
+4. **Iterating**: You can iterate over the elements of a list using loops (e.g., `for` loop, enhanced `for` loop) or iterators (e.g., `Iterator<>`, `ListIterator<>`).
+
+5. **Generics**: `List<>` supports generics, allowing you to specify the type of elements it will contain. For example, `List<String>` represents a list of strings.
+
+6. **Ordering**: `List<>` maintains the order of elements as they are inserted. This means the position of each element in the list is preserved unless explicitly modified.
+
+7. **Duplicates**: Unlike sets, `List<>` allows duplicate elements. Each element in a list is identified by its index, so multiple identical elements can exist in the same list.
+
+Understanding these concepts will provide you with a good understanding of how lists work and how they can be used in conjunction with streams for data manipulation and processing. Once you're comfortable with `List<>`, you can move on to exploring streams and how they can streamline your code for working with collections.
