@@ -1,0 +1,16 @@
+Yes, that's correct! If you encounter an exception but you don't want to handle it at the current location in your code, you can allow it to propagate further up the call stack. This means you don't catch the exception locally, and it will be passed up to the calling method. 
+
+In Java, you can do this by either not catching the exception locally or by declaring the exception in the method signature using the `throws` keyword. By declaring the exception in the method signature, you indicate that the method might throw that exception, and the responsibility for handling it is delegated to the caller of the method.
+
+Here's an example:
+
+```java
+public void readFile() throws FileNotFoundException {
+    FileInputStream file = new FileInputStream("file.txt");
+    // Code that may throw FileNotFoundException
+}
+```
+
+In this example, the `readFile()` method may throw a `FileNotFoundException`. Instead of handling it within the method, we declare it in the method signature using `throws`. This means that any code calling the `readFile()` method must handle or declare the exception.
+
+This approach is useful when you want to handle exceptions at a higher level of abstraction or when you want to propagate the exception to the caller for handling. It allows for better separation of concerns and more flexibility in error handling.
