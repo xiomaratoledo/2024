@@ -1,9 +1,16 @@
 // Superclass
 class Shape {
-    private String color; // New field
+    private String color; // Existing field
+    private String name;  // New field
+
+    // Constructor
+    public Shape(String color, String name) {
+        this.color = color;
+        this.name = name;
+    }
 
     void draw() {
-        System.out.println("Drawing a shape");
+        System.out.println("Drawing a " + name);
     }
 
     // Getter and setter for the color field
@@ -14,43 +21,63 @@ class Shape {
     public void setColor(String color) {
         this.color = color;
     }
+
+    // Getter and setter for the name field
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }
 
 // Subclass 1
 class Circle extends Shape {
+    public Circle(String color, String name) {
+        super(color, name);
+    }
+
     void draw() {
-        System.out.println("Drawing a circle");
+        System.out.println("Drawing a circle named " + getName());
     }
 }
 
 // Subclass 2
 class Rectangle extends Shape {
+    public Rectangle(String color, String name) {
+        super(color, name);
+    }
+
     void draw() {
-        System.out.println("Drawing a rectangle");
+        System.out.println("Drawing a rectangle named " + getName());
     }
 }
 
 // Subclass 3
 class Triangle extends Shape {
+    public Triangle(String color, String name) {
+        super(color, name);
+    }
+
     void draw() {
-        System.out.println("Drawing a triangle");
+        System.out.println("Drawing a triangle named " + getName());
     }
 }
 
 public class Main {
     public static void main(String[] args) {
         // Creating an array of shapes
-        Shape[] shapes = {new Circle(), new Rectangle(), new Triangle()};
-
-        // Setting color for each shape
-        shapes[0].setColor("Red");
-        shapes[1].setColor("Green");
-        shapes[2].setColor("Blue");
+        Shape[] shapes = {
+            new Circle("Red", "Circle"),
+            new Rectangle("Green", "Rectangle"),
+            new Triangle("Blue", "Triangle")
+        };
 
         // Polymorphic method calls
         for (Shape shape : shapes) {
             shape.draw();
-            System.out.println("Color: " + shape.getColor()); // Printing color for each shape
+            System.out.println("Color: " + shape.getColor());
         }
     }
 }
