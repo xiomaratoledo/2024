@@ -1,0 +1,51 @@
+Encapsulation and access modifiers are fundamental concepts in object-oriented programming (OOP), primarily used in languages like Java, C++, and C#. Let's break down each concept:
+
+### Encapsulation:
+Encapsulation is the bundling of data (attributes) and methods (functions) that operate on the data into a single unit, typically called a class. The data is hidden from outside the class and can only be accessed through the class's methods. This helps in data protection and allows for better control over how data is manipulated.
+
+#### Key principles of encapsulation:
+1. **Data Hiding**: The internal representation of an object is hidden from the outside world.
+2. **Data Bundling**: The data and the methods that manipulate the data are bundled together in a class.
+3. **Information Hiding**: Only necessary information is exposed, while the rest remains hidden.
+
+### Access Modifiers:
+Access modifiers are keywords used to control the accessibility of classes, methods, and variables in OOP languages. They determine which classes can access the member and in what manner.
+
+#### Common access modifiers:
+1. **Public**: Members are accessible from any other class.
+2. **Private**: Members are accessible only within the same class.
+3. **Protected**: Members are accessible within the same class and its subclasses (inheritance).
+4. **Default (or package-private)**: Members are accessible within the same package.
+
+### How encapsulation and access modifiers work together:
+Encapsulation uses access modifiers to control the access to the internal state of an object. By making data private and providing public methods to access or modify that data, encapsulation ensures that the object's integrity is maintained. 
+
+#### Example (Java):
+```java
+public class Car {
+    private String model;
+    private int year;
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        if (year > 0) {
+            this.year = year;
+        } else {
+            System.out.println("Invalid year");
+        }
+    }
+}
+```
+
+In this example, `model` and `year` are private variables, so they cannot be accessed directly from outside the `Car` class. Instead, public getter and setter methods are provided to access and modify these variables, thus controlling how the data is accessed and manipulated.
