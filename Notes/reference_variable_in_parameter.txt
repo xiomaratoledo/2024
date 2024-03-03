@@ -1,0 +1,13 @@
+Yes, that's correct! When you use a reference variable in a method parameter in Java, it allows you to access the methods and properties of the class to which the object belongs.
+
+Here's a breakdown of how it works:
+
+1. **Reference Variable**: When you declare a parameter in a method signature, you're essentially creating a reference variable that can hold an object of a specific type.
+
+2. **Object Access**: When you pass an object as an argument to the method, the reference variable in the method parameter holds a reference to that object.
+
+3. **Accessing Class Methods**: Since the reference variable knows the type of the object it's referencing, you can use it to access the methods and properties of that class. This includes both instance methods and static methods (though static methods are typically accessed through the class name rather than an object reference).
+
+4. **Method Invocation**: You can invoke methods on the reference variable just like you would on any other object of the same type.
+
+So, when you catch an exception in Java, the exception object is passed to the catch block as an argument and assigned to a reference variable (e.g., `IOException e`). You can then use this reference variable (`e`) to access the methods of the exception class and handle the exception accordingly.
