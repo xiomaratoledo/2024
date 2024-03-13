@@ -43,6 +43,31 @@ If you have any further questions or need additional clarification on recursion 
 
 
 
+return 5 * 4 * 3 * 2 * 1  * 1
+
+
+
+
+
+
+
+
+
+
+return 5 * calculateFactorial(5 - 1);
+return 4 * calculateFactorial(4 - 1);
+return 3 * calculateFactorial(3 - 1);
+return 2 * calculateFactorial(2 - 1);
+return 1 * calculateFactorial(1 - 1);
+
+
+
+
+
+
+
+
+
 
 
 
