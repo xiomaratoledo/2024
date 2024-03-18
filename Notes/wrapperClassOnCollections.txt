@@ -1,0 +1,11 @@
+Using `Character` and `Integer` classes instead of primitive types `char` and `int` provides more flexibility and functionality in certain situations. Here's why the program uses `Character` and `Integer`:
+
+1. **Map Key and Value Types**: In the `romanValues` map, we need to map characters (Roman numerals) to their corresponding integer values. Using `Character` as the key type allows us to directly use Roman numeral characters as keys. Similarly, using `Integer` as the value type allows us to store and retrieve integer values associated with Roman numerals.
+
+2. **Nullability and Wrapper Classes**: Using `Character` and `Integer` allows us to handle null values if needed. For example, if we need to represent a missing or unknown value in the map, we can use `null` or `Integer.valueOf(null)`.
+
+3. **Methods and Utility Functions**: The `Character` and `Integer` classes provide various utility methods and functionalities that can be useful in certain scenarios. For example, `Character.isDigit(char)` can be used to check if a character is a digit, and `Integer.parseInt(String)` can be used to parse integer values from strings.
+
+4. **Consistency and Readability**: Using wrapper classes consistently throughout the program can improve readability and maintainability, especially when dealing with collections and APIs that require objects rather than primitives.
+
+While using primitive types `char` and `int` could work in this specific case, using `Character` and `Integer` provides a more object-oriented approach and allows for potential future enhancements or modifications with ease. Additionally, it aligns with best practices for using Java collections and APIs.
