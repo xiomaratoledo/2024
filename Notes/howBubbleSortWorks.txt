@@ -1,0 +1,39 @@
+Bubble sort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. The pass through the list is repeated until the list is sorted. Here's how it works:
+
+1. **Start**: Begin with an unsorted array of elements.
+2. **Passes**: Repeat the following steps until no more swaps are needed:
+   - **Comparison**: Compare each pair of adjacent elements in the array.
+   - **Swap**: If the elements are in the wrong order (i.e., the left element is greater than the right element for ascending order), swap them.
+3. **End of Pass**: After completing one pass through the array, the largest (or smallest) element will be in its correct position at the end of the array.
+4. **Repeat**: Repeat steps 2 and 3 for each subsequent pass through the array, excluding the last element (which is already in its correct position after each pass).
+5. **Termination**: The algorithm terminates when no more swaps are needed during a pass, indicating that the array is sorted.
+
+Here's a visualization of how Bubble Sort works:
+
+```
+Initial array: [5, 3, 8, 4, 2]
+
+Pass 1:
+Comparison: [5, 3] (Swap) => [3, 5], [5, 8] (No swap) => [3, 5, 8], [8, 4] (Swap) => [3, 5, 4, 8], [8, 2] (Swap) => [3, 5, 4, 2, 8]
+Array after Pass 1: [3, 5, 4, 2, 8]
+
+Pass 2:
+Comparison: [3, 5] (No swap), [5, 4] (Swap) => [3, 4, 5], [5, 2] (Swap) => [3, 4, 2, 5]
+Array after Pass 2: [3, 4, 2, 5, 8]
+
+Pass 3:
+Comparison: [3, 4] (No swap), [4, 2] (Swap) => [3, 2, 4, 5]
+Array after Pass 3: [3, 2, 4, 5, 8]
+
+Pass 4:
+Comparison: [3, 2] (Swap) => [2, 3], [3, 4] (No swap), [4, 5] (No swap)
+Array after Pass 4: [2, 3, 4, 5, 8]
+
+Pass 5:
+Comparison: [2, 3] (No swap), [3, 4] (No swap), [4, 5] (No swap)
+Array after Pass 5: [2, 3, 4, 5, 8]
+
+Array is sorted: [2, 3, 4, 5, 8]
+```
+
+In each pass, the largest element is bubbled up to its correct position at the end of the array, reducing the number of elements to consider in subsequent passes until the entire array is sorted.
