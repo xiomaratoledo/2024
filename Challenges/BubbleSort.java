@@ -10,23 +10,23 @@ public class BubbleSort {
         
         System.out.println("Sorted array: " + Arrays.toString(array));
     }
-    
+    // 5, 2, 9, 1, 5, 6
     public static void bubbleSort(int[] array) {
         int n = array.length;
         boolean swapped;
         
         do {
-            swapped = false;
+            swapped = false; // default / reset the boolean
             for (int i = 1; i < n; i++) {
-                if (array[i - 1] > array[i]) {
+                if (array[i - 1] > array[i]) { // compare two elements then swap them
                     // Swap elements
-                    int temp = array[i - 1];
-                    array[i - 1] = array[i];
-                    array[i] = temp;
-                    swapped = true;
+                    int temp = array[i - 1]; // temp is previous element
+                    array[i - 1] = array[i]; // change previous element to current
+                    array[i] = temp; //change current element to previous
+                    swapped = true; // to make loop run
                 }
             }
-            n--;
+            n--; // use to compare the next two elements
         } while (swapped);
     }
 }
