@@ -14,3 +14,39 @@ frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 ```
 
 This sets the default close operation of the `frame` object to `EXIT_ON_CLOSE`, ensuring that the application terminates when the frame is closed.
+
+
+
+
+Apologies for any confusion. To clarify:
+
+In Java, you can access static members (such as static constants, static variables, and static methods) through an instance variable, but it's generally recommended to access them directly through the class name for clarity and to avoid confusion.
+
+So, while accessing `EXIT_ON_CLOSE` through an instance variable like `frame.EXIT_ON_CLOSE` might compile and work due to Java's leniency, it's not a recommended practice because it can be misleading. Static members belong to the class itself, not to instances of the class, so accessing them through an instance variable might confuse other developers who read your code.
+
+Therefore, it's best to access static constants like `EXIT_ON_CLOSE` directly through the class name, as in `JFrame.EXIT_ON_CLOSE`, to make it clear that it's a static member of the `JFrame` class. This promotes readability and helps prevent potential misunderstandings.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
