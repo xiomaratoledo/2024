@@ -1,0 +1,16 @@
+Why use JFrame.EXIT_ON_CLOSE instead of frame.EXIT_ON_CLOSE
+
+
+The reason you use `JFrame.EXIT_ON_CLOSE` instead of `frame.EXIT_ON_CLOSE` is because `EXIT_ON_CLOSE` is a static constant of the `JFrame` class itself, not an instance variable. 
+
+When you set the default close operation for a `JFrame`, you're essentially telling the program what to do when the user closes the window. `JFrame.EXIT_ON_CLOSE` is a constant that tells the frame to exit the entire application when it's closed. This means that when the user closes the JFrame window, it will not only close the window but also terminate the entire Java application.
+
+If you were to use `frame.EXIT_ON_CLOSE`, you would be trying to access a static constant from an instance variable, which is not possible. The correct way to access `EXIT_ON_CLOSE` is by referencing it through the class name `JFrame`.
+
+Here's an example of how it should be used:
+
+```java
+frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+```
+
+This sets the default close operation of the `frame` object to `EXIT_ON_CLOSE`, ensuring that the application terminates when the frame is closed.
